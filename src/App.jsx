@@ -51,13 +51,14 @@ function App() {
 
     <div className='todo-area'>
 
-      <h1>Список задач {todos.length}</h1>
+      <h1>Список задач ({todos.length})</h1>
 
       <input 
         type="text" className="todo-input" 
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
         placeholder='Напиши новую задачу...'
+        onKeyDown={(e) => e.key === 'Enter' && addTodo()}
       />
 
       <button className="todo-button" onClick={() => addTodo()}>Подтвердить</button>
