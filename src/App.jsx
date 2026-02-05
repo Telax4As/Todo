@@ -26,16 +26,15 @@ function App() {
   const [inputValue, setInputValue] = useState('')
 
   const addTodo = () => {
-    {inputValue ? 
+    if (inputValue.trim()) {
 
       setTodos([...todos, {
-      text: inputValue,
-      id: Date.now(),
-      completed: false
-      }]) 
-
-      : pass}
-
+        text: inputValue,
+        id: Date.now(),
+        completed: false
+        }
+      ]) 
+    }
     setInputValue('')
   }
 
