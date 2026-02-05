@@ -47,7 +47,7 @@ function App() {
   const toggleAll = () => {
     setTodos(
       todos.map(todo => 
-        ({...todo, completed: !todo.completed})
+        ({...todo, completed: true})
       )
     )
   }
