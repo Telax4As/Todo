@@ -17,8 +17,17 @@
 }
 
 h1{
-  margin-bottom: 40px;
+  margin-bottom: 6px;
   color: rgb(37, 32, 32);
+}
+
+.inf{
+  font-size: 14px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .todo-input{
@@ -33,31 +42,28 @@ h1{
   gap: 10px;
 }
 
-.confirm-input{
+.btn{
+  color: rgb(228, 225, 225);
   display: flex;
   flex-wrap: wrap;
-  max-width: 120px;
-  padding: 7px 20px;
+  max-width: 130px;
+  padding: 4px 10px;
   border-radius: 7px;
+  font-size: 12px;
   align-items: center;
+  font-weight: 700;
+}
+
+.confirm-input{
+  background-color: #777a77;
 }
 
 .clear-completed{
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 120px;
-  padding: 7px 20px;
-  border-radius: 7px;
-  align-items: center;
+  background-color: hsl(0, 100%, 50%);
 }
 
 .toggle-all{
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 120px;
-  padding: 7px 20px;
-  border-radius: 7px;
-  align-items: center;
+  background-color: #00ff00;
 }
 
 ul{

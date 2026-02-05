@@ -1,12 +1,12 @@
-import { useState } from 'react'
+import { use, useState } from 'react'
 import './Header.css'
 
 
 function Header() {
 
-    const name = 'Dimash'
-    const age = 17
-    const avatar = 'src/avatar.png'
+    const [name, setName] = useState('Dimash')
+    const [age, setAge] = useState(17)
+    const [avatar, setAvatar] = useState('src/avatar.png')
 
     const renderName = (name) => {
         return <div className="name"><h1>My name is {name}</h1></div>

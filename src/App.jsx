@@ -18,6 +18,11 @@ function App() {
     ]
   })
 
+  const lenCompletedTodos = todos.filter(todo => todo.completed === true).length
+  const lenRemainedTodos = todos.filter(todo => todo.completed === false).length
+  const lenTodos = todos.length
+  const percentOfCompletedTodos = `${lenCompletedTodos / lenTodos * 100}%`
+
   useEffect(() => {
     localStorage.setItem('todos', JSON.stringify(todos));
   }, [todos]);
@@ -74,6 +79,10 @@ function App() {
 
       <h1>Список задач ({todos.length})</h1>
 
+      <div className="inf">
+        Всего: {lenTodos} |  Выполнено: {lenCompletedTodos} | Осталось: {lenRemainedTodos} | Процент выполненых: {percentOfCompletedTodos}
+      </div>
+
       <input 
         type="text" className="todo-input" 
         value={inputValue}
@@ -83,9 +92,9 @@ function App() {
       />
 
       <div className="btns-area">
-        <button className="confirm-input" onClick={() => addTodo()}>Подтвердить</button>
-        <button className="clear-completed" onClick={() => clearCompleted()}>Очистить выполненные</button>
-        <button className="toggle-all" onClick={() => toggleAll()}>Отметить все</button>
+        <button className="btn confirm-input" onClick={() => addTodo()}>Подтвердить</button>
+        <button className="btn clear-completed" onClick={() => clearCompleted()}>Очистить выполненные</button>
+        <button className="btn toggle-all" onClick={() => toggleAll()}>Отметить все</button>
 
       </div>
 
