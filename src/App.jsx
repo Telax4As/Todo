@@ -1,21 +1,29 @@
-import { useState } from 'react'
+import { useState, useEffect} from 'react'
 import './App.css'
 
 function App() {
 
-  const [todos, setTodos] = useState([
-    {text: 'Написать Project on React ',
-      id: 14,
-      completed: true
-    },
-    {
-      text: 'Нажми меня',
-      id: 13,
-      completed: false
-    }
-  ])
-  const [inputValue, setInputValue] = useState('')
+  const [todos, setTodos] = useState(() => {
+    const saved = localStorage.getItem('todos');
+    return saved ? JSON.parse(saved) : [
+      {text: 'Написать Project on React ',
+        id: 14,
+        completed: true
+      },
+      {
+        text: 'Нажми меня',
+        id: 13,
+        completed: false
+      }
+    ]
+  })
 
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }, [todos]);
+
+
+  const [inputValue, setInputValue] = useState('')
 
   const addTodo = () => {
     {inputValue ? 
