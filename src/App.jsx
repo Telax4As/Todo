@@ -21,7 +21,7 @@ function App() {
   const lenCompletedTodos = todos.filter(todo => todo.completed === true).length
   const lenRemainedTodos = todos.filter(todo => todo.completed === false).length
   const lenTodos = todos.length
-  const percentOfCompletedTodos = `${lenCompletedTodos / lenTodos * 100}%`
+  const percentOfCompletedTodos = (lenTodos ? `${Math.round(lenCompletedTodos / lenTodos * 100)}%` : `Отсутствует`)
 
   useEffect(() => {
     localStorage.setItem('todos', JSON.stringify(todos));

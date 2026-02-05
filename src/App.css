@@ -43,7 +43,7 @@ h1{
 }
 
 .btn{
-  color: rgb(228, 225, 225);
+  color: rgb(255, 255, 255);
   display: flex;
   flex-wrap: wrap;
   max-width: 130px;
@@ -63,7 +63,7 @@ h1{
 }
 
 .toggle-all{
-  background-color: #00ff00;
+  background-color: #18eb18;
 }
 
 ul{
