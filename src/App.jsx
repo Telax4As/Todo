@@ -38,6 +38,20 @@ function App() {
     setInputValue('')
   }
 
+  const clearCompleted = () => {
+    setTodos(
+      todos.filter(todo => todo.completed === false)
+    )
+  }
+
+  const toggleAll = () => {
+    setTodos(
+      todos.map(todo => 
+        ({...todo, completed: !todo.completed})
+      )
+    )
+  }
+
   const removeTodo = (id) => {
     setTodos(
       todos.filter(todo => todo.id !== id)
@@ -68,7 +82,12 @@ function App() {
         onKeyDown={(e) => e.key === 'Enter' && addTodo()}
       />
 
-      <button className="todo-button" onClick={() => addTodo()}>Подтвердить</button>
+      <div className="btns-area">
+        <button className="confirm-input" onClick={() => addTodo()}>Подтвердить</button>
+        <button className="clear-completed" onClick={() => clearCompleted()}>Очистить выполненные</button>
+        <button className="toggle-all" onClick={() => toggleAll()}>Отметить все</button>
+
+      </div>
 
       <ul>
         {todos.map(todo =>

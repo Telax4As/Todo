@@ -13,7 +13,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
   padding: 40px 0;
 }
 
@@ -25,12 +24,40 @@ h1{
 .todo-input{
   border-radius: 5px;
   padding: 10px 20px;
+  margin-bottom: 20px;
 }
 
-.todo-button{
+.btns-area{
+  display: flex;
+  margin-bottom: 25px;
+  gap: 10px;
+}
+
+.confirm-input{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 120px;
   padding: 7px 20px;
   border-radius: 7px;
-  margin-bottom: 25px;
+  align-items: center;
+}
+
+.clear-completed{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 120px;
+  padding: 7px 20px;
+  border-radius: 7px;
+  align-items: center;
+}
+
+.toggle-all{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 120px;
+  padding: 7px 20px;
+  border-radius: 7px;
+  align-items: center;
 }
 
 ul{
